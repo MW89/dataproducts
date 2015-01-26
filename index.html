@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The body mass index</title>
+  <meta charset="utf-8">
+  <meta name="description" content="The body mass index">
+  <meta name="author" content="MW">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>The body mass index</h1>
+    <h2>BMIapp - an interactive Shiny app</h2>
+    <p>MW<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>The body mass index I</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>The body mass index (BMI), or Quetelet index, is a measure of relative size based on the mass and height of an individual.</li>
+<li>The BMI for a person is defined as their body mass divided by the square of their height—with the value universally being given in units of kg/m<sup>2.</sup> </li>
+<li>So if the weight is in kilograms and the height in metres, the result is immediate, if pounds and inches are used, a conversion factor of 703 (kg/m2)/(lb/in2) must be applied.</li>
+<li>See <a href="http://en.wikipedia.org/wiki/Body_mass_index">http://en.wikipedia.org/wiki/Body_mass_index</a> for more details.</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>BMIapp</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>I build a simple shiny app usable to calculate the BMI for given height (cm) and weight (kg).</li>
+<li>Visit <a href="https://mw89.shinyapps.io/BMIapp/">https://mw89.shinyapps.io/BMIapp/</a> and try it out yourself!</li>
+<li>Height and weight input is done by 2 sliders.</li>
+<li>The server.R file contains the BMI formula</li>
+</ol>
+
+<pre><code class="r">round(input$weight/((input$height/100)^2), 2)
+</code></pre>
+
+<ol>
+<li>You can find the ui.R and server.R files here: <a href="https://github.com/MW89/dataproducts">https://github.com/MW89/dataproducts</a></li>
+<li>unit convertion: 1 in = 2.54 cm / 1 lb = 0.45 kg</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>BMIapp - sample calculation</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r"># input values:
+input &lt;- list(weight=80, height=180)
+
+# calculate BMI:
+round(input$weight/((input$height/100)^2), 2)
+</code></pre>
+
+<pre><code>## [1] 24.69
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>References</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><a href="http://en.wikipedia.org/wiki/Body_mass_index">http://en.wikipedia.org/wiki/Body_mass_index</a></li>
+<li><a href="http://shiny.rstudio.com/">http://shiny.rstudio.com/</a></li>
+<li><a href="http://slidify.org/">http://slidify.org/</a></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='The body mass index I'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='BMIapp'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='BMIapp - sample calculation'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='References'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
